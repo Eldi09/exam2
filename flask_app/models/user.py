@@ -52,13 +52,13 @@ class User:
     def validate_user(data):
         is_valid = True
         if len(data['first_name']) < 3 or data['first_name'].isalpha() == False:
-                flash("*First name must be at least 3 characters letters only.", "first_name", 'firstUpdate')
+                flash("*First name must be at least 3 characters letters only.", "first_name")
                 is_valid = False
         if len(data['last_name']) < 3 or data['last_name'].isalpha() == False:
-                flash("*Last name must be at least 3 characters letters only.", "last_name", "lastUpdate")
+                flash("*Last name must be at least 3 characters letters only.", "last_name")
                 is_valid = False
         if not EMAIL_REGEX.match(data['email']):
-            flash("*Invalid email adress.", "email", 'emailUpdate')
+            flash("*Invalid email adress.", "email")
             is_valid = False
         if len(data['password']) < 8:
             flash("*Your password is less than 8 characters", "password")
